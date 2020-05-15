@@ -2,86 +2,16 @@
 <html>
     <head>
         <title>RSP</title>
-        <meta charset="UTF-8"/>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
     </head>
 
-
-    <script>
-
-        function computerPlay() {
-            switch(Math.floor(Math.random()*3)) {
-                case 0:
-                return 'rock';
-                break;
-
-                case 1:
-                return 'paper';
-                break;
-
-                case 2:
-                return 'scissors';
-                break;
-            };
-        } 
-
-        function playRound(playerSelction, computerSelection) {
-
-            if (playerSelction === computerSelection) {
-                return 'It is a tie!'
-            } else if (computerSelection === 'rock') {
-                if (playerSelction === 'scissors') {
-                    return 'You Lose!';
-                } else if (playerSelction === 'paper') {
-                    return 'You Win!';
-                }
-            } else if (computerSelection === 'paper') {
-                if (playerSelction === 'scissors') {
-                    return 'You Win!';
-                } else if (playerSelction === 'rock') {
-                    return 'You Lose!';
-                }
-            } else if (computerSelection === 'scissors') {
-                if (playerSelction === 'rock') {
-                    return 'You Win!';
-                } else if (playerSelction === 'paper') {
-                    return 'You Lose!';
-                }
-            }
-        }
-
-        
-        function game() {
-            let playerScore = 0;
-            let computerScore = 0;
-            let drawScore = 0;
-            
-            for (let i = 0; i < 5; i++) {
-                let playerSelction = prompt("Rock Paper or Scissors?");
-                let computerSelection = computerPlay();
-
-                switch (playRound(playerSelction, computerSelection)) {
-                    case 'You Win!':
-                        playerScore = playerScore + 1;
-                        break;
-                    case 'You Lose!':
-                        computerScore = computerScore + 1;
-                        break;
-                    case 'It is a tie!':
-                        drawScore = drawScore + 1;
-                        break;
-                }
-            }
-
-            if(playerScore > computerScore) {
-                console.log(`Player Score: ${playerScore}, Computer Score: ${computerScore}, Draw: ${drawScore}. You Win!`);
-            } else if (computerScore > playerScore) {
-                console.log(`Player Score: ${playerScore}, Computer Score: ${computerScore}, Draw: ${drawScore}. You Lose!`);
-            } else {
-                console.log(`Player Score: ${playerScore}, Computer Score: ${computerScore}, Draw: ${drawScore}. A Draw!`);
-            }
-
-        }
-
-        game();
-    </script>
+    <body>
+        <div class="player">
+            <button type="button" id="rock">Rock</button>
+            <button type="button" id="paper">Paper</button>
+            <button typer="button" id="scissors">Scissors</button>
+        </div>
+    </body>
+<script src="script.js"></script>
 </html>
